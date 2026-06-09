@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+float cargadordevector(float vectorr[5]);
+float calcularpromedio(float vectorr[5]);
+int contadordealturas(float alturas[5], float promedio);
+
+int main()
+//realizado por Sansolini
+{
+    float vectorsito[5];
+    cargadordevector(vectorsito);
+    float promedio = calcularpromedio(vectorsito);
+    cout << endl << "El promedio de las alturas es de: " << promedio << " metros" << endl;
+    contadordealturas(vectorsito, promedio);
+    return 0;
+}
+
+float cargadordevector(float vectorr[5])
+{
+    for(int i = 0; i < 5; i++)
+    {
+        cout << "Ingrese la altura en metros: ";
+        cin >> vectorr[i];
+    }
+    return vectorr[5];
+}
+
+float calcularpromedio(float vectorr[5])
+{
+    float suma_total = 0;
+    for(int j = 0; j < 5; j++)
+    {
+        suma_total = suma_total + vectorr[j];
+    }
+    double promedio = suma_total / 5;
+    return promedio;
+}
+
+int contadordealturas(float vectorr[5], float promedio)
+{
+    int altos = 0;
+    int bajos = 0;
+    for(int i = 0; i < 5; i++)
+    {
+        if(vectorr[i] > promedio)
+        {
+            altos++;
+        }
+        if(vectorr[i] < promedio)
+        {
+            bajos++;
+        }
+    }
+    cout << "Personas mas altas que el promedio: " << altos << endl;
+    cout << "Personas mas bajas que el promedio: " << bajos << endl;
+    return altos;
+}
