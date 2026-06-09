@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+int mayor36y50(int numero);
+//realizado por Sansolini joaquin
+int main()
+{
+    int numero[8];
+    int mayorq36 = 0;
+    int mayorq50 = 0;
+    int suma_total = 0;
+    cout << "Este programa le pones numeritos y hace magia" << endl << endl;
+    for(int i = 0; i < 8; i++)
+    {
+        int resultadotote = 0;
+        cout << "Ingrese el numero: ";
+        cin >> numero[i];
+        suma_total = suma_total + numero[i];
+        resultadotote = mayor36y50(numero[i]);
+        if(resultadotote == 1)
+        {
+            mayorq36++;
+        }
+        if(resultadotote == 2)
+        {
+            mayorq36++;
+            mayorq50++;
+        }
+    }
+    cout << endl << "El valor acumulado de todos los numeros es de: " << suma_total << endl;
+    for(int j = 0; j <= 8; j++)
+    {
+        if(j <= 6)
+        {
+            cout << numero[j] << " + "; 
+        }
+        if(j == 7)
+        {
+            cout << numero[j] << " = " << suma_total << endl << endl;
+        }
+    }
+    cout << "El valor acumulado de los numeros mayores que 36 es de: " << mayorq36 << endl;
+    cout << "Los numeros mayores a 36 son: ";
+    for(int k = 0; k <= 7; k++)
+    {
+        if(numero[k] > 36)
+        {
+            cout << numero [k] << " ";
+        }
+    }
+    cout << endl << endl;
+    cout << "La cantidad de numeros mayores que 50 es de: " << mayorq50 << endl;
+    return 0;
+}
+
+int mayor36y50(int numero)
+    {
+    int resultado = 3;
+    if(numero <= 36)
+    {
+        resultado = 0;
+    }
+    if(numero > 36)
+    {
+        resultado = 1;
+    }
+    if(numero > 50)
+    {
+        resultado = 2;
+    }
+    return resultado;
+}
