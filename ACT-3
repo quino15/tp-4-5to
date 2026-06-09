@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int cargadordevector(int vectorr[], int cantidadd);
+int sumador(int vectorr1[], int vectorr2[], int cantidadd);
+int mostradordevector(int vectorr[], int cantidadd);
+
+int main()
+//realizado por Sansolini
+{
+    int cantidad = 5;
+    int vector1[cantidad];
+    int vector2[cantidad];
+    int vector3 = 0;
+    cout << "Ingrese los valores del vector 1" << endl;
+    cargadordevector(vector1, cantidad);
+    cout << "Ingrese los valores del vector 2" << endl;
+    cargadordevector(vector2, cantidad);
+    cout << endl << "La secuencia ingresada del primer vector es: ";
+    mostradordevector(vector1, cantidad);
+    cout << endl << "La secuencia ingresada del segundo vector es: ";
+    mostradordevector(vector2, cantidad);
+    vector3 = sumador(vector1, vector2, cantidad);
+    cout << endl << "La suma total de los vectores es de: " << vector3 << endl;
+    return 0;
+}
+
+int cargadordevector(int vectorr[], int cantidadd)
+{
+    for(int i = 0; i < cantidadd; i++)
+    {
+        cout << "Ingrese el numero: ";
+        cin >> vectorr[i];
+    }
+    return vectorr[cantidadd];
+}
+
+int sumador(int vectorr1[], int vectorr2[], int cantidadd)
+{
+    int suma_total = 0;
+    for(int i = 0; i < cantidadd; i++)
+    {
+        suma_total = suma_total + vectorr1[i] + vectorr2[i];
+    }
+    return suma_total;
+}
+
+int mostradordevector(int vectorr[], int cantidadd)
+{
+    for(int j = 0; j < cantidadd; j++)
+    {
+        cout << vectorr[j] << " ";
+    }
+    return vectorr[cantidadd];
+}
