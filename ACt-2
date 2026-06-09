@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int cargadordevector(int vectorr[], int cantidadd);
+int mostradordevector(int vectorr[], int cantidadd);
+
+int main()
+//realizado por Sansolini
+{
+    int cantidad = 5;
+    int vectorsito[cantidad];
+    cargadordevector(vectorsito, cantidad);
+    cout << endl;
+    mostradordevector(vectorsito, cantidad);
+    return 0;
+}
+
+int cargadordevector(int vectorr[], int cantidadd)
+{
+    for(int i = 0; i < cantidadd; i++)
+    {
+        cout << "Ingrese el numero: ";
+        cin >> vectorr[i];
+    }
+    return vectorr[cantidadd];
+}
+
+int mostradordevector(int vectorr[], int cantidadd)
+{
+    cout << "La secuencia ingresada es: ";
+    for(int j = 0; j < cantidadd; j++)
+    {
+        cout << vectorr[j] << " ";
+    }
+    return vectorr[cantidadd];
+}
